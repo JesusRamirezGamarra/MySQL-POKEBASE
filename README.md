@@ -10,7 +10,7 @@
 
 
 # CoderHouse_Backend
-Curso de Coder House - MySQL [ver mas](https://drive.google.com/file/d/1wmKa_GlKSJe4ULi7VXq_7txd1jRivOL1/view)
+Curso de Coder House - MySQL [ver mas](https://github.com/JesusRamirezGamarra/MySQL-POKEBASE/blob/main/public/SQL.pdf)
 
 
 

@@ -16,3 +16,8 @@ Curso de Coder House - MySQL [ver mas](https://github.com/JesusRamirezGamarra/My
 
 ## MySQL-POKEBASE
 DER - MYSQL - Script Database - CRUD - Views - report 
+
+## Fuente :
+
+pokedex [ver mas](https://www.pokemon.com/)
+data : [ver mas](https://www.kaggle.com/datasets/rounakbanik/pokemon)

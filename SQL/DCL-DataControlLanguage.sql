@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON POKE . * TO 'user'@'localhost';
+FLUSH PRIVILEGES;

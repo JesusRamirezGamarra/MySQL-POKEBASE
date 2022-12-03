@@ -202,41 +202,40 @@ CREATE TABLE IF NOT EXISTS pokemon_per_gym_leaders(
 )  ENGINE=INNODB;
 CREATE TABLE IF NOT EXISTS pokemon_movements(
     id_pokemon_movement SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    id_pokemon SMALLINT UNSIGNED NOT NULL,
     name VARCHAR(30) NOT NULL, 
     active TINYINT NOT NULL DEFAULT true,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP NULL,
-    CONSTRAINT uk_unique__pokemon_movements_name UNIQUE(name)
+    CONSTRAINT fk__pokemon_movements_per_pokemons_id_pokemon FOREIGN KEY (id_pokemon) REFERENCES pokemons (id_pokemon)    
+    ON UPDATE CASCADE ON DELETE RESTRICT      
 )  ENGINE=INNODB;
 CREATE TABLE IF NOT EXISTS pokemon_movement_per_pokemons(
     id_pokemon_movement_per_pokemon SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     id_pokemon SMALLINT UNSIGNED NOT NULL,
-    id_pokemon_movement SMALLINT UNSIGNED NOT NULL,
-    point SMALLINT UNSIGNED NOT NULL,
+    against_bug	DECIMAL(3, 2) NOT NULL,
+    against_dark	DECIMAL(3, 2) NULL,
+    against_dragon	DECIMAL(3, 2) NULL,
+    against_electric	DECIMAL(3, 2) NULL,
+    against_fairy	DECIMAL(3, 2)  NOT NULL,
+    against_fight	DECIMAL(3, 2)  NOT NULL,
+    against_fire	DECIMAL(3, 2)  NOT NULL,
+    against_flying	DECIMAL(3, 2)  NOT NULL,
+    against_ghost	DECIMAL(3, 2)  NOT NULL,
+    against_grass	DECIMAL(3, 2)  NOT NULL,
+    against_ground	DECIMAL(3, 2)  NOT NULL,
+    against_ice	DECIMAL(3, 2) NOT NULL,
+    against_normal	DECIMAL(3, 2)  NOT NULL,
+    against_poison	DECIMAL(3, 2)  NOT NULL,
+    against_psychic	DECIMAL(3, 2)  NOT NULL,
+    against_rock	DECIMAL(3, 2)  NOT NULL,
+    against_steel	DECIMAL(3, 2)  NOT NULL,
+    against_water	DECIMAL(3, 2)  NOT NULL,
     active TINYINT NOT NULL DEFAULT true,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP NULL,    
-    INDEX IX__pokemon_movement_per_pokemons_id_pokemon_id_pokemon_movement (id_pokemon ASC,id_pokemon_movement ASC),        
     CONSTRAINT fk__pokemon_movement_per_pokemons_id_pokemon FOREIGN KEY (id_pokemon) REFERENCES pokemons (id_pokemon)    
-    ON UPDATE CASCADE ON DELETE RESTRICT,    
-    CONSTRAINT fk__pokemon_movement_per_pokemons_id_pokemon_movement FOREIGN KEY (id_pokemon_movement) REFERENCES pokemon_movements (id_pokemon_movement)    
     ON UPDATE CASCADE ON DELETE RESTRICT
 )  ENGINE=INNODB;
-CREATE TABLE IF NOT EXISTS pokemon_movement_per_pokemon_types(
-    id_pokemon_movement_per_pokemon_type SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    id_pokemon_type SMALLINT UNSIGNED NOT NULL,
-    id_pokemon_movement SMALLINT UNSIGNED NOT NULL,
-    accuracy SMALLINT UNSIGNED NOT NULL,
-    active TINYINT NOT NULL DEFAULT true,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    modified_at TIMESTAMP NULL,    
-    INDEX IX__pokemon_movement_per_pokemon_ty_id_pokemon_ty_id_pokemon_mov (id_pokemon_type ASC,id_pokemon_movement ASC),        
-    CONSTRAINT fk__pokemon_movement_per_pokemon_types_id_pokemon_type FOREIGN KEY (id_pokemon_type) REFERENCES pokemon_types (id_pokemon_type)    
-    ON UPDATE CASCADE ON DELETE RESTRICT,    
-    CONSTRAINT fk__pokemon_movement_per_pokemon_types_id_pokemon_movement FOREIGN KEY (id_pokemon_movement) REFERENCES pokemon_movements (id_pokemon_movement)    
-    ON UPDATE CASCADE ON DELETE RESTRICT
-)  ENGINE=INNODB;
-
-
 
 

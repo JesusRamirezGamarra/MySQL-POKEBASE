@@ -23,7 +23,7 @@ $$ DELIMITER ;
 
 DROP FUNCTION IF EXISTS attack_against;
 DELIMITER $$
-CREATE FUNCTION attack_against(id_pokemon_attack smallint, id_pokemon_receive smallint ) 
+CREATE FUNCTION IF NOT EXISTS attack_against(id_pokemon_attack smallint, id_pokemon_receive smallint ) 
 RETURNS SMALLINT
 READS SQL DATA 
 DETERMINISTIC
@@ -66,10 +66,38 @@ BEGIN
 END
 $$ DELIMITER ;
 
+DROP FUNCTION IF EXISTS calculate_Age;
+DELIMITER $$
+CREATE FUNCTION IF NOT EXISTS calculate_Age ( Age date    )
+RETURNS INT DETERMINISTIC
+BEGIN
+    DECLARE TodayDate DATE;
+    SELECT CURRENT_DATE() INTO TodayDate;
+    RETURN YEAR(TodayDate) - YEAR(Age);
+END$$
+DELIMITER ;
 
 
+DROP FUNCTION IF EXISTS pokemon_count;
+DELIMITER $$
+CREATE FUNCTION pokemon_count(generation smallint) 
+RETURNS INTEGER
+DETERMINISTIC NO SQL READS SQL DATA
+BEGIN
+    DECLARE result INTEGER;
+    
+    SELECT COUNT(*)
+        INTO result
+    FROM pokemons p
+    WHERE p.generation = generation
+    GROUP BY p.generation;
 
+    RETURN result;
+END$$
+DELIMITER ;
 
+SELECT pokemon_count(3);
+SELECT calculate_Age('2000-05-14');
 SELECT game_edition (1);
 SELECT attack_against (1,12);
 

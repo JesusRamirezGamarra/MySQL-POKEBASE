@@ -1,5 +1,6 @@
 -- https://pokemon.fandom.com/es/wiki/Medalla#Medallas
 -- https://pokemon.fandom.com/es/wiki/Tipos_elementales
+-- https://www.wikidex.net/wiki/L%C3%ADder_de_gimnasio
 INSERT INTO leagues
     (name)
 VALUES 
@@ -5682,7 +5683,29 @@ SELECT id_pokemon,0.25,1,0.5,2,0.5,1,2,0.5,1,0.25,0,1,0.5,0,0.5,1,0.5,1 FROM pok
 SELECT id_pokemon,1,1,0.5,0.5,0.5,2,4,1,1,0.25,1,1,0.5,0,0.5,0.5,0.5,0.5 FROM pokemons WHERE name='Kartana' UNION ALL
 SELECT id_pokemon,2,0.5,2,0.5,4,2,0.5,1,0.5,0.5,1,2,1,1,0,1,1,0.5 FROM pokemons WHERE name='Guzzlord' UNION ALL
 SELECT id_pokemon,2,2,1,1,1,0.5,1,1,2,1,1,1,1,1,0.5,1,1,1 FROM pokemons WHERE name='Necrozma' UNION ALL
-SELECT id_pokemon,0.25,0.5,0,1,0.5,1,2,0.5,1,0.5,2,0.5,0.5,0,0.5,0.5,1,1 FROM pokemons WHERE name='Magearna' 
+SELECT id_pokemon,0.25,0.5,0,1,0.5,1,2,0.5,1,0.5,2,0.5,0.5,0,0.5,0.5,1,1 FROM pokemons WHERE name='Magearna' ;
 
+INSERT INTO  cities ( name ) 
+SELECT 'Pueblo Paleta';
 
+INSERT INTO coaches ( id_city, name ,birth )
+SELECT '1','Ash Ketchum', '2020-05-14'  FROM cities WHERE name = 'Pueblo Paleta';
+
+INSERT INTO medal_per_coaches( id_coach,id_medal, winned_at)
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Roca' LIMIT 1  )  AS id_medal, '2020-01-12 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Cascada' LIMIT 1  )  AS id_medal, '2020-02-11 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Trueno' LIMIT 1  )  AS id_medal, '2020-03-10 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Arcoíris' LIMIT 1  )  AS id_medal, '2020-04-09 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Alma' LIMIT 1  )  AS id_medal, '2020-05-08 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Pantano' LIMIT 1  )  AS id_medal, '2020-06-07 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Volcán' LIMIT 1  )  AS id_medal, '2020-07-06 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Tierra' LIMIT 1  )  AS id_medal, '2020-08-05 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Céfiro' LIMIT 1  )  AS id_medal, '2020-09-04 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Colmena' LIMIT 1  )  AS id_medal, '2020-10-13 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Planicie' LIMIT 1  )  AS id_medal, '2020-11-02 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Niebla' LIMIT 1  )  AS id_medal, '2020-12-01 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Tormenta' LIMIT 1  )  AS id_medal, '2021-01-01 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Mineral' LIMIT 1  )  AS id_medal, '2021-03-02 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Glaciar' LIMIT 1  )  AS id_medal, '2021-05-03 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum' UNION ALL
+SELECT id_coach, ( SELECT id_medal FROM medals WHERE name ='Dragón' LIMIT 1  )  AS id_medal, '2021-07-04 20:58:08' FROM coaches c WHERE c.name ='Ash Ketchum';
 

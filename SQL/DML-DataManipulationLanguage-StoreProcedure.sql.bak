@@ -4,7 +4,7 @@ Litado de store Procedure :
     (1) sp_count_of_pokemon :  total number of pokemons
         # Goal : 	obtain the total count of pokemons
         # Table :   pokemons                    
-        # Database: poke  
+        # Database: poke : 
         # Return :  amount ( total count of pokemons )
         # Order By : Nothing                     
         # Test :    CALL count_of_pokemon;
@@ -12,7 +12,7 @@ Litado de store Procedure :
     (2) sp_count_of_pokemon_by_generation :  total numbers of pokemons by generation parameter filter 
         # Goal : 	obtain the total numbers of pokemons by generation parameter filter 
         # Table :   pokemons                    
-        # Database: poke  
+        # Database: poke : 
         # Return :  	amount ( total count of pokemons by generation parameter filter )
         # Order By : Nothing                     
         # Test :    CALL count_of_pokemon_by_generation (1);
@@ -20,7 +20,7 @@ Litado de store Procedure :
     (3) sp_pokemon_orderby_generation :  list of pokemons order by dinamic columns
         # Goal : 	obtain list of pokemons order by column parameter and ASC/DESC parameter
         # Table :   pokemons
-        # Database: poke  
+        # Database: poke : 
         # Return :  id_pokemon	( FK by table pokemons )
 					number		( order number of Pokemons )
 					name		( name of pokemons )
@@ -39,7 +39,7 @@ Litado de store Procedure :
     (4) sp_inactivar_pokemon :  inactivar pokemon
         # Goal : 	update active pokemon for false/0
         # Table :   pokemons
-        # Database: poke 
+        # Database: poke : 
         # Return :   nothing
         # Order By : Nothing                     
         # Test :    CALL inactivar_pokemon ( 1 )    

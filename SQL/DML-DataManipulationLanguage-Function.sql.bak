@@ -1,5 +1,5 @@
 /****************************************************************************************
-List of Functions
+Litado de store Procedure : 
 ------------------------------------------------------------------------------
     (1) fn_game_edition :  name of pokemon edition by number of pokemon parameter
         # Goal : 	obtain of pokemon edition
@@ -21,19 +21,21 @@ List of Functions
         # Order By : Nothing                     
         # Test :     SELECT fn_attack_against (1,12);
 ------------------------------------------------------------------------------
-    (3) fn_calculate_Age :  calculate edad in year by bithdate parameter
-        # Goal : 	obtain the age in year by birhdate
-        # Table :   nothing                    
+    (3) fn_calculate_Age :  
+        # Goal : 	
+        # Table :   
+                    
         # Database: poke 
-        # Return : 	fn_calculate_Age ( age in year by birhdate )
+        # Return : 	
         # Order By : Nothing                     
         # Test :    SELECT fn_calculate_Age('2000-05-14');
 -----------------------------------------------------------------------------------------
     (4) fn_pokemon_count :  count of pokemons by generation parameter
         # Goal : 	obtain amount of pokemon by generation
-        # Table :   pokemons
+        # Table :   
+                    
         # Database: poke 
-        # Return :  fn_pokemon_count ( number of pokemon by generation )
+        # Return :  
         # Order By : Nothing                     
         # Test :   SELECT fn_pokemon_count(3);
 ****************************************************************************************/

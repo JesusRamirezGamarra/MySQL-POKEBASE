@@ -77,7 +77,7 @@ list of views :
         # Test :    SELECT * FROM vw_pokemon_by_pokemon_types ;
 ------------------------------------------------------------------------------
     (7) vw_statistics_by_pokemon :  list of statistics with points of hp, attack, defense, special defense, special attack and speed for all pokemon (active) detailing its name
-        # Goal : 	get the points for each stats of all pokemons
+        # Goal : 	get the points for each stat of all pokemons
         # Table :   Pokemons
                     statistics
         # Database: poke 
@@ -93,25 +93,20 @@ list of views :
         # Order By : Nothing                     
         # Test :    SELECT * FROM vw_statistics_by_pokemon ;
 ------------------------------------------------------------------------------
-    (8) vw_statistics_by_pokemon__islengedary :  list of statistics with points of hp, attack, defense, special defense, special attack and speed for all legendary's pokemon (active)
-        # Goal : get the points for each stats of all legendary's pokemons
-        # Table :   Pokemons
-					statistics
+    (8) vw_statistics_by_pokemon__islengedary :  
+        # Goal : 
+        # Table :   
+                    
         # Database: poke 
         # Return :  
-					id_pokemon		( FK by table pokemons )
-					id_statistics	( FK by table statistics )
-					pokemon_name	( name of pokemon )
-					hp            	( point for HP )
-					attack        	( point for attact )
-					defense			( point for defense )
-					sp_defense		( point for special defense ) 
-					sp_attack		( point for special attack )
-					speed			( Point for speed )	
-        # Order By :                     
+                    
+                    
+                    
+        # Order By : 
+                     
         # Test :    SELECT * FROM vw_statistics_by_pokemon__islengedary ;
 ------------------------------------------------------------------------------  
-    (9) vw_statistics_by_pokemon_types__Max_score :  list of statitics with max statitics by pokemon types for all pokemon active
+    (9) vw_statistics_by_pokemon_types__Max_score :  list of statitics with max statitics by pokemon types
         # Goal : 	get list for maximun point of statitics by pokemon types
         # Table :   Pokemons
 					pokemon_per_pokemon_types
